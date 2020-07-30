@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import * as BooksAPI from './utils/BooksAPI';
-import SearchWindow from './SearchWindow';
+import Search from './Search';
 import BookCase from './BookCase';
 import './App.css';
 
@@ -27,7 +27,7 @@ class BooksApp extends Component {
           <BookCase />
         )} />
         <Route path='/search' render={() => (
-          <SearchWindow />
+          <Search />
         )} />
       </div>
     )
