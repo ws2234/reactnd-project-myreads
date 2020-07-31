@@ -2,12 +2,12 @@ import React from 'react';
 import MoveToPopup from './MoveToPopup';
 
 const Book = props => {
-  const { book, updateBooks } = props;
+  const { books, book, updateBooks } = props;
 
   const title = book.title ? book.title : ''
   const authors = book.authors ? book.authors.join(', ') : ''
   const backgroundImage = 'imageLinks' in book ? book.imageLinks.thumbnail : ''
-  
+
   return (
     (
       <li>
@@ -21,7 +21,7 @@ const Book = props => {
                 backgroundImage: `url(${backgroundImage})`
               }}>
             </div>
-            <MoveToPopup book={book} updateBooks={updateBooks} />
+            <MoveToPopup books={books} book={book} updateBooks={updateBooks} />
           </div>
           <div className="book-title">{title}</div>
           <div className="book-authors">{authors}</div>

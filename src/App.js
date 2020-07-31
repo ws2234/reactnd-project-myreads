@@ -31,7 +31,7 @@ class BooksApp extends Component {
           <BookCase books={this.state.books} updateBooks={this.updateBooks} />
         )} />
         <Route path='/search' render={() => (
-          <Search updateBooks={this.updateBooks} />
+          <Search books={this.state.books} updateBooks={this.updateBooks} />
         )} />
       </div>
     )

@@ -30,7 +30,7 @@ class Search extends Component {
   }
 
   render() {
-    const { updateBooks } = this.props;
+    const { books, updateBooks } = this.props;
     return (
       <div className="search-books">
         <SearchBar
@@ -38,6 +38,7 @@ class Search extends Component {
           handleUpdate={this.handleUpdate}
         />
         <SearchResults
+          books={books}
           searchResults={this.state.searchResults}
           updateBooks={updateBooks}
         />
