@@ -4,14 +4,24 @@ import Book from './Book';
 const BookShelf = props => {
   const { books, shelf, updateBooks } = props;
 
-  const filteredBooks = books.length > 0
-    ? books.filter((book) => (
-      book.shelf === shelf)
-    )
-    : []
+  const filteredBooks =
+    books.length > 0
+      ? books.filter((book) => (
+        book.shelf === shelf)
+      )
+      : []
+
   return (
     <div className="bookshelf">
-      <h2 className="bookshelf-title">{shelf}</h2>
+      <h2 className="bookshelf-title">
+        {
+          shelf === 'currentlyReading'
+            ? 'Currently Reading'
+            : shelf === 'wantToRead'
+              ? 'Want to Read'
+              : 'Read'
+        }
+      </h2>
       <div className="bookshelf-books">
         <ol className="books-grid">
           {filteredBooks.map((book) => (
