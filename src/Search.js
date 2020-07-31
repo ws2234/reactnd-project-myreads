@@ -17,6 +17,7 @@ class Search extends Component {
     BooksAPI.search(query)
       .then((searchResults) => {
         if(searchResults && !searchResults.error) {
+          console.log(searchResults)
           this.setState(() => ({
             searchResults
           }))
@@ -29,6 +30,7 @@ class Search extends Component {
   }
 
   render() {
+    const { updateBooks } = this.props;
     return (
       <div className="search-books">
         <SearchBar
@@ -37,6 +39,7 @@ class Search extends Component {
         />
         <SearchResults
           searchResults={this.state.searchResults}
+          updateBooks={updateBooks}
         />
       </div>
     )

@@ -10,7 +10,7 @@ class BooksApp extends Component {
     books: []
   }
 
-  componentDidMount() {
+  updateBooks = () => {
     BooksAPI.getAll()
       .then((books) => {
         console.log(books);
@@ -20,14 +20,18 @@ class BooksApp extends Component {
       })
   }
 
+  componentDidMount() {
+    this.updateBooks()
+  }
+
   render() {
     return (
       <div className="app">
         <Route exact path='/' render={() => (
-          <BookCase books={this.state.books} />
+          <BookCase books={this.state.books} updateBooks={this.updateBooks} />
         )} />
         <Route path='/search' render={() => (
-          <Search />
+          <Search updateBooks={this.updateBooks} />
         )} />
       </div>
     )

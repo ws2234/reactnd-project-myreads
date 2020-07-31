@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import BookShelf from './BookShelf';
 
 const BookCase = props => {
-  const { books } = props;
+  const { books, updateBooks } = props;
   const shelves = ["currentlyReading", "wantToRead", "read"];
 
   return (
@@ -14,7 +14,7 @@ const BookCase = props => {
       <div className="list-books-content">
         <div>
           {shelves.map((shelf) => (
-            <BookShelf books={books} shelf={shelf} />
+            <BookShelf key={shelf} books={books} shelf={shelf} updateBooks={updateBooks} />
           ))}
         </div>
       </div>

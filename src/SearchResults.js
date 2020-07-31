@@ -2,7 +2,7 @@ import React from 'react';
 import Book from './Book';
 
 const SearchResults = (props) => {
-  const { searchResults } = props;
+  const { searchResults, updateBooks } = props;
 
   return (
     <div className="search-books-results">
@@ -10,7 +10,7 @@ const SearchResults = (props) => {
         (
           <ol className="books-grid">
             {searchResults.map(book => (
-              <Book book={book} />
+              <Book book={book} updateBooks={updateBooks} />
             ))}
           </ol>
         )
