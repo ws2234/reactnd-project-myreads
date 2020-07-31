@@ -17,7 +17,6 @@ class Search extends Component {
     BooksAPI.search(query)
       .then((searchResults) => {
         if(searchResults && !searchResults.error) {
-          console.log(searchResults)
           this.setState(() => ({
             searchResults
           }))

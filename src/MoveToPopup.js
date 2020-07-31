@@ -21,8 +21,6 @@ const MoveToPopup = props => {
 
 
   const handleChange = (book, event) => {
-    console.log(event.target.value);
-    console.log(book);
     BooksAPI.update(book, event.target.value)
       .then(() => updateBooks());
   }

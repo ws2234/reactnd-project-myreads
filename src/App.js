@@ -13,7 +13,6 @@ class BooksApp extends Component {
   updateBooks = () => {
     BooksAPI.getAll()
       .then((books) => {
-        console.log(books);
         this.setState(() => ({
           books
         }))
