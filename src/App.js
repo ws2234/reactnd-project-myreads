@@ -10,6 +10,9 @@ class BooksApp extends Component {
     books: []
   }
 
+  /**
+  * @description Sets state by pulling the latest book data from the server.
+  */
   updateBooks = () => {
     BooksAPI.getAll()
       .then((books) => {
@@ -19,6 +22,7 @@ class BooksApp extends Component {
       })
   }
 
+  //initializes the list of books when the component mounts for the first time
   componentDidMount() {
     this.updateBooks()
   }

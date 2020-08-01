@@ -4,6 +4,7 @@ import Book from './Book';
 const BookShelf = props => {
   const { books, shelf, updateBooks } = props;
 
+  // filters list of books to only those that are for the selected shelf
   const filteredBooks =
     books.length > 0
       ? books.filter((book) => (

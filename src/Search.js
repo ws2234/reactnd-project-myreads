@@ -9,6 +9,15 @@ class Search extends Component {
     searchResults: []
   }
 
+  /**
+  * @description Handles updates to search query. As the user enters text
+  *   into the query field, the function sets the new state of the query to
+  *   match the user input. Then, the function will initiate a search from
+  *   the BooksAPI if the query is entered. Finally, the function will set the
+  *   new state of the searchResults. It will be set to empty if there is an
+  *   error or will set it to the searchResults returned by the API.
+  * @param {string} query
+  */
   handleUpdate = (query) => {
     this.setState(() => ({
       query: query
