@@ -16,10 +16,10 @@ const BookShelf = props => {
       <h2 className="bookshelf-title">
         {
           shelf === 'currentlyReading'
-            ? 'Currently Reading'
+            ? "What I'm currently reading"
             : shelf === 'wantToRead'
-              ? 'Want to Read'
-              : 'Read'
+              ? 'What I want to read'
+              : "What I've read"
         }
       </h2>
       <div className="bookshelf-books">

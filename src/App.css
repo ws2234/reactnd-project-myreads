@@ -13,9 +13,19 @@ body, .app {
 /* main page */
 
 .list-books-title {
-  padding: 10px 0;
-  background: #2e7c31;
-  text-align: center;
+  padding: 20px 20px;
+  text-align: left;
+  height: 90px;
+  /* background taken from https://leaverou.github.io/css3patterns/#carbon */
+  background:
+    linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+    linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+    linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+    linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+    linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+    linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+  background-color: #131313;
+  background-size: 20px 20px;
 }
 
 .list-books-title h1 {
@@ -58,7 +68,7 @@ body, .app {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: #2e7d32;
+  background: black;
   background-image: url('./icons/add.svg');
   background-repeat: no-repeat;
   background-position: center;
@@ -69,7 +79,8 @@ body, .app {
 }
 
 .open-search button:hover {
-  background-color: rgb(0, 102, 0);
+  background: #2e7d32;
+  background-image: url('./icons/add.svg');
 }
 
 
@@ -169,12 +180,19 @@ button:active {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #60ac5d;
+  background: black;
   background-image: url('./icons/arrow-drop-down.svg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 20px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  transition: transform .2s; /* Animation */
+}
+
+.book-shelf-changer:hover {
+  transform: scale(1.2); /* (120% zoom) */
+  background: #60ac5d;
+  background-image: url('./icons/arrow-drop-down.svg');
 }
 
 .book-shelf-changer select {
@@ -189,6 +207,11 @@ button:active {
 .book-cover {
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   background: #eee;
+  transition: transform .2s; /* Animation */
+}
+
+.book-cover:hover {
+  transform: scale(1.1); /* (110% zoom) */
 }
 
 .book-cover-title {
