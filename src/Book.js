@@ -16,9 +16,8 @@ const Book = props => {
             <div
               className="book-cover"
               style={{
-                width: 128,
-                height: 193,
-                backgroundImage: `url(${backgroundImage})`
+                backgroundImage: `url(${backgroundImage})`,
+                backgroundSize: 'contain'
               }}>
             </div>
             <MoveToPopup books={books} book={book} updateBooks={updateBooks} />
