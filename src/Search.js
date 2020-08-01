@@ -14,18 +14,22 @@ class Search extends Component {
       query: query
     }))
 
-    BooksAPI.search(query)
-      .then((searchResults) => {
-        if(searchResults && !searchResults.error) {
-          this.setState(() => ({
-            searchResults
-          }))
-        } else {
-          this.setState(() => ({
-            searchResults: ''
-          }))
-        }
-      })
+    query === ''
+      ? this.setState(() => ({ searchResults: '' }))
+      : (
+        BooksAPI.search(query)
+          .then((searchResults) => {
+            if(searchResults && !searchResults.error) {
+              this.setState(() => ({
+                searchResults
+              }))
+            } else {
+              this.setState(() => ({
+                searchResults: ''
+              }))
+            }
+          })
+      )
   }
 
   render() {
