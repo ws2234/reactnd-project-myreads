@@ -20,19 +20,23 @@ class Search extends Component {
   */
   handleUpdate = (query) => {
     this.setState(() => ({
-      query: query
+      query
     }))
 
-    // calling the fetchBooks method after a 800ms delay
+    // calling the fetchBooks method after a 400ms delay
     setTimeout(()=>{
       this.fetchBooks()
     }, 800)
   }
 
+  /**
+  * @description fetches search results from the server if the user hasn't
+  *    entered an appropriate search term.
+  */
   fetchBooks = () => {
     const query = this.state.query;
 
-    query === '' || query === null
+    query === ''
       ? this.setState(() => ({ searchResults: '' }))
       : (
         BooksAPI.search(query)
