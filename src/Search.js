@@ -20,10 +20,10 @@ class Search extends Component {
   */
   handleUpdate = (query) => {
     this.setState(() => ({
-      query: query
+      query
     }))
 
-    this.state.query === ''
+    query === ''
       ? this.setState(() => ({ searchResults: '' }))
       : (
         BooksAPI.search(query)
