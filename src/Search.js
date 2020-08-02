@@ -23,7 +23,16 @@ class Search extends Component {
       query: query
     }))
 
-    this.state.query === ''
+    // calling the fetchBooks method after a 800ms delay
+    setTimeout(()=>{
+      this.fetchBooks()
+    }, 800)
+  }
+
+  fetchBooks = () => {
+    const query = this.state.query;
+
+    query === '' || query === null
       ? this.setState(() => ({ searchResults: '' }))
       : (
         BooksAPI.search(query)
