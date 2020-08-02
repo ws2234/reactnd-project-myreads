@@ -23,7 +23,7 @@ class Search extends Component {
       query: query
     }))
 
-    query === ''
+    this.state.query === ''
       ? this.setState(() => ({ searchResults: '' }))
       : (
         BooksAPI.search(query)
