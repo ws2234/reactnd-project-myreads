@@ -26,7 +26,7 @@ class Search extends Component {
     // calling the fetchBooks method after a 400ms delay
     setTimeout(()=>{
       this.fetchBooks()
-    }, 800)
+    }, 400)
   }
 
   /**
