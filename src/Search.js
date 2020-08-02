@@ -37,7 +37,7 @@ class Search extends Component {
     const query = this.state.query;
 
     query === ''
-      ? this.setState(() => ({ searchResults: '' }))
+      ? this.setState(() => ({ searchResults: [] }))
       : (
         BooksAPI.search(query)
           .then((searchResults) => {
@@ -47,7 +47,7 @@ class Search extends Component {
               }))
             } else {
               this.setState(() => ({
-                searchResults: ''
+                searchResults: []
               }))
             }
           })
