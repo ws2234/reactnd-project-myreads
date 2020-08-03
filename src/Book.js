@@ -6,9 +6,10 @@ const Book = props => {
 
   //pull title, authors, and backgroundImage out of book object
   //sets values to '' if value does not exist
-  const title = book.title ? book.title : ''
-  const authors = book.authors ? book.authors.join(', ') : ''
-  const backgroundImage = 'imageLinks' in book ? book.imageLinks.thumbnail : ''
+  //Using nullish coalescing operator and optional chaining
+  const title = book.title ?? ''
+  const authors = book.authors ?? ''
+  const backgroundImage = book.imageLinks?.thumbnail ?? ''
 
   return (
     (

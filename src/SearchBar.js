@@ -7,7 +7,7 @@ const SearchBar = (props) => {
   return (
     <div className="search-books-bar">
       <Link to="/" className="close-search">
-        <button className="close-search">Close</button>
+        Close
       </Link>
       <div className="search-books-input-wrapper">
         {/*
